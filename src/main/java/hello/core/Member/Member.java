@@ -1,4 +1,4 @@
-package hello.core;
+package hello.core.Member;
 
 public class Member {
 

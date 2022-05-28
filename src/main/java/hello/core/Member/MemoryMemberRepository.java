@@ -1,4 +1,4 @@
-package hello.core;
+package hello.core.Member;
 
 import java.util.HashMap;
 
