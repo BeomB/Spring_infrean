@@ -11,13 +11,15 @@ public class OrderApp {
 
     public static void main(String[] args) {
 
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
 
-        Member member = new Member(1L,"이범기",Grade.VIP);
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
+
+        Member member = new Member(1L, "이범기", Grade.VIP);
         memberService.join(member);
 
-        Order order =  orderService.createOrder(1L,"피자",8000);
+        Order order = orderService.createOrder(1L, "피자", 8000);
 
     }
 

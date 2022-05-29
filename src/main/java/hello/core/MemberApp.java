@@ -9,11 +9,12 @@ public class MemberApp {
 
     public static void main(String[] args) {
 
+        AppConfig appConfig = new AppConfig();
         // 서비스를 구현 => 이 부분에서 memberService라는 추상화와 MemeberServiceImPl() 이라는 구현에 의존
-        MemberService memberService = new MemberServiceImpl();
+        MemberService memberService = appConfig.memberService();
 
-        Member newMember1 = new Member(1L,"이범기", Grade.BASIC);
-        Member newMember2 = new Member(2L,"차승윤", Grade.VIP);
+        Member newMember1 = new Member(1L, "이범기", Grade.BASIC);
+        Member newMember2 = new Member(2L, "차승윤", Grade.VIP);
 
         memberService.join(newMember1);
         memberService.join(newMember2);
@@ -27,9 +28,6 @@ public class MemberApp {
         System.out.println("findMember2 = " + findMember2.getName());
 
     }
-
-
-
 
 
 }

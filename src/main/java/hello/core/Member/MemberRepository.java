@@ -7,5 +7,4 @@ public interface MemberRepository {             ///MemberRepository 인터페이
     Member findById(Long id);
 
 
-
 }
