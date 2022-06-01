@@ -6,15 +6,17 @@ import hello.core.discount.FixDiscountPolicy;
 import hello.core.order.Order;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class OrderApp {
 
     public static void main(String[] args) {
 
-        AppConfig appConfig = new AppConfig();
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        MemberService memberService = applicationContext.getBean("memberService",MemberService.class);
+        OrderService orderService = applicationContext.getBean("orderService",OrderService.class);
 
-        MemberService memberService = appConfig.memberService();
-        OrderService orderService = appConfig.orderService();
 
         Member member = new Member(1L, "이범기", Grade.VIP);
         memberService.join(member);
