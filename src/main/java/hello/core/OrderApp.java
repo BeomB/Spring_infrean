@@ -17,7 +17,6 @@ public class OrderApp {
         MemberService memberService = applicationContext.getBean("memberService",MemberService.class);
         OrderService orderService = applicationContext.getBean("orderService",OrderService.class);
 
-
         Member member = new Member(1L, "이범기", Grade.VIP);
         memberService.join(member);
 
